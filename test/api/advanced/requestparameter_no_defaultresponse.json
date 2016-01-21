@@ -1,0 +1,17 @@
+{
+	"responses":[
+			{
+				"request":{
+					"parameters":{
+						"foo":"bar"
+					}
+				},
+				"response":{
+					"status":400,
+					"body":{
+						"message":"foo"
+					}
+				}
+			}
+	]
+}

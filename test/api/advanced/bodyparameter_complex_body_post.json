@@ -1,0 +1,62 @@
+{
+	"responses":[
+			{
+				"request":{
+					"body":{
+						"user":{"firstname":"Luke", "lastname":"Skywalker"}
+					}
+				},
+				"response":{
+					"status":500,
+					"body":{
+						"message":"Firstname and lastname matches"
+					}
+				}
+			},
+			{
+				"request":{
+					"body":{
+						"user":{"firstname":"Luke"}
+					}
+				},
+				"response":{
+					"status":501,
+					"body":{
+						"message":"Firstname matches"
+					}
+				}
+			},
+			{
+				"request":{
+					"body":{
+						"user":{"address":{"zipcode":"55555"}}
+					}
+				},
+				"response":{
+					"status":502,
+					"body":{
+						"message":"zipcode matches"
+					}
+				}
+			},
+			{
+				"request":{
+					"body":{
+						"foo":"bar"
+					}
+				},
+				"response":{
+					"status":503,
+					"body":{
+						"message":"foo matches"
+					}
+				}
+			}
+	],
+	"defaultResponse":{
+				"status":201,
+				"body":{
+					"message":"No match"
+				}
+			}
+}

@@ -1,0 +1,33 @@
+{
+  "name": "grunt-connect-apimock",
+  "version": "0.1.0",
+  "description": "Grunt Connect middleware for mocking API calls with json-files during development.",
+  "homepage": "https://bitbucket.org/ljohansson/grunt-connect-apimock",
+  "repository": "https://bitbucket.org/ljohansson/grunt-connect-apimock.git",
+  "author": {
+    "name": "Lars Johansson"
+  },
+  "keywords": [
+    "gruntplugin,grunt-contrib-connect,connect,rest,api,mock,middleware"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.3.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}

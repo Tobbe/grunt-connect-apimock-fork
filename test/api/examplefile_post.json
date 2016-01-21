@@ -1,0 +1,91 @@
+{
+	"responses":[
+		{
+			"request":{
+				"parameters":{
+					"foo":"bar"
+				},
+				"body":{
+					"bar":"foo"
+				}
+			},
+			"response":{
+				"status":400,
+				"body":{
+					"message":"Both parameter and body matches"
+				}
+			}
+		},
+		{
+			"request":{
+				"parameters":{
+					"foo":"bar",
+					"bar":"foo"
+				}
+			},
+			"response":{
+				"status":401,
+				"body":{
+					"message":"Two parameters matches"
+				}
+			}
+		},
+		{
+			"request":{
+				"parameters":{
+					"foo":"bar"
+				}
+			},
+			"response":{
+				"status":402,
+				"body":{
+					"message":"One parameter matches"
+				}
+			}
+		},
+		{
+			"request":{
+				"body":{
+					"user":{"firstname":"Luke", "lastname":"Skywalker"}
+				}
+			},
+			"response":{
+				"status":403,
+				"body":{
+					"message":"Two body parameters matches"
+				}
+			}
+		},
+		{
+			"request":{
+				"body":{
+					"foo":"foo"
+				}
+			},
+			"response":{
+				"status":404,
+				"body":{
+					"message":"One body parameter matches"
+				}
+			}
+		},
+		{
+			"request":{
+				"body":{
+					"foo":"bar"
+				}
+			},
+			"response":{
+				"body":{
+					"message":"One body parameter matches. Default status"
+				}
+			}
+		}
+	],
+	"defaultResponse":{
+		"status":201,
+		"body":{
+			"message":"Nothing matches. Default response"
+		}
+	}
+}

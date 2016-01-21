@@ -1,0 +1,36 @@
+{
+	"responses":[
+			{
+				"request":{
+					"parameters":{
+						"foo":"foo"
+					}
+				},
+				"response":{
+					"status":400,
+					"body":{
+						"message":"foo"
+					}
+				}
+			},
+			{
+				"request":{
+					"parameters":{
+						"foo":"bar"
+					}
+				},
+				"response":{
+					"status":200,
+					"body":{
+						"message":"bar"
+					}
+				}
+			}
+	],
+	"defaultResponse":{
+				"status":201,
+				"body":{
+					"message":"foofoofoo"
+				}
+			}
+}
