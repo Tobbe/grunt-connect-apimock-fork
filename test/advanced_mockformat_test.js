@@ -24,11 +24,16 @@ var http = require('http');
 */
 
 function testAdvancedFormatGet(test, path, expectedStatus, expectedMessage, failMessage){
+    testAdvancedFormatGetWithHeaders(test, path, {}, expectedStatus, expectedMessage, failMessage);
+}
+
+function testAdvancedFormatGetWithHeaders(test, path, headers, expectedStatus, expectedMessage, failMessage){
     test.expect(3);
     http.request({
       path: path,
       method: 'GET',
-      port: 8080
+      port: 8080,
+      headers: headers
     }, function(response) {
       var data = '';
       response.on('data', function (chunk) {
@@ -359,6 +364,43 @@ exports.connect_apimock = {
       404, 
       'foobar', 
       'should return {"message":"foobar"}');
+  },
+
+
+
+  requestheaders_one_of_two_matches: function(test) {
+    testAdvancedFormatGetWithHeaders(test,
+      '/api/advanced/requestheaders',
+      {
+        header1: 'one',
+        header2: '2'
+      },
+      201,
+      'foofoofoo',
+      'requestheaders should return {"message": "foofoofoo"}');
+  },
+  requestheaders_both_matches: function(test) {
+    testAdvancedFormatGetWithHeaders(test,
+      '/api/advanced/requestheaders',
+      {
+        header1: 'one',
+        header2: 'two'
+      },
+      401,
+      'foobar',
+      'requestheaders should return {"message": "foobar"}');
+  },
+  requestheaders_two_of_three_matches: function(test) {
+    testAdvancedFormatGetWithHeaders(test,
+      '/api/advanced/requestheaders',
+      {
+        header1: 'one',
+        header2: 'two',
+        header3: 'three'
+      },
+      401,
+      'foobar',
+      'requestheaders should return {"message": "foobar"}');
   },
 
 
