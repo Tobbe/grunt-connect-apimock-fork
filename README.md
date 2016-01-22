@@ -16,7 +16,7 @@ PUT `/myApp/api/users/1` uses the file `mymockdirectory/users/1_put.json`
 
 DELETE `/myApp/api/users/1` uses the file `mymockdirectory/users/1_delete.json`
 
-The format of the json-files can be in a simple or an advanced format. When using the simple format, the file content will be returned as the body of the response and http-status 200. When using the advanced format, it is possible to specify different responses and different http-status depending on the request parameters or/and body parameters of the request.
+The format of the json-files can be in a simple or an advanced format. When using the simple format, the file content will be returned as the body of the response and http-status 200. When using the advanced format, it is possible to specify different responses and different http-status depending on the request parameters, body parameters, and/or the headers of the request.
 
 ## Getting Started
 This plugin requires Grunt.
@@ -94,7 +94,7 @@ The json-files can be written in a simple or an advanced format.
 
 Use the simple format if it is ok to get the same response body and HTTP-status 200 for any request data.
 
-If you need to get different responses or HTTP-status depending on the request parameters or the request body. Then use the advanced format.
+If you need to get different responses or HTTP-status depending on the request parameters, the request body and/or the request headers you need to use the advanced format.
 
 ### Simple format
 This is simple. The content of the file will be returned as the body of the response. With HTTP-status 200.
@@ -140,6 +140,12 @@ Type: `Object`
 Required: no
 
 Names and values of the request parametes that needs to be matched for this response.
+
+#### responses.request.headers
+Type: `Object`
+Required: no
+
+Names and values of the request headers that needs to be matched for this response.
 
 #### responses.request.body
 Type: `Object`
@@ -284,7 +290,7 @@ A combination of request parameter and request body
 }
 ```
 
-For more example see test/api/examplefile_post.json
+For more examples see the tests in test/
 
 
 
